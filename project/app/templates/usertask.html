@@ -1,0 +1,29 @@
+ {% extends "base1.html" %}
+{% load static %}
+
+{% block title %}
+    {{ data.name }}'s Profile
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/usertask.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+{% endblock %}
+
+{% block Content %}
+ <div class="task-container">
+        <h2>Task Details</h2>
+        <p><strong>Task ID:</strong> {{ data.user_id }}</p>
+
+        {% if mytsk %}
+        <textarea readonly>{{ mytsk }}</textarea>
+        {% else %}
+        <p>No task details available.</p>
+        {% endif %}
+
+        <div class="btn-container">
+            <a href="javascript:history.back()" class="btn btn-back">
+                <i class="bi bi-arrow-left"></i> Go Back</a>
+        </div>
+    </div>
+{% endblock %}

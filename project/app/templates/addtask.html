@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Task{% endblock %}
+{% block css %} 
+    <link rel="stylesheet" href="{% static 'css/addtask.css' %}">
+{% endblock %}
+
+{% block Content %}
+ <table border="2">
+    <tr>
+        <th>S.no</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Department</th>
+        <th>Employee Task</th>
+    </tr>
+
+    {% for i in data2 %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ i.employe_name }}</td>
+        <td>{{ i.employe_email }}</td>
+        <td>{{ i.department }}</td>
+        <td>
+            <button id="addtask-btn">
+                <a href="{% url 'givetask' pk=i.id %}">Add Task</a>
+            </button>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% if mydata %}
+    <form action="{% url 'givetask' pk=mydata.id %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <textarea name="text" cols="30" rows="10" placeholder="Enter Text here"></textarea>
+        <button type="submit">Submit Task</button>
+    </form>
+{% endif %}
+{% endblock %}

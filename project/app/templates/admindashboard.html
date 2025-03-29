@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Admin dashboard {% endblock %}
+{% block css %} <link rel="stylesheet" href="{% static 'css/admindashbord.css' %}"> {% endblock %}
+
+{% block Content %}
+{% comment %} <h1 class="new">This is about page</h1> {% endcomment %}
+<div class="table-container">
+    <h1 style="color: white;">Employee List</h1>
+    <table border="2px solid white" id="table-data" >
+        
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Contact</th>
+                <th>Department</th>
+                <th>Date of Joining</th>
+                <th>Employe password</th>
+                <th>Edit</th>
+                <th>Delete</th>
+
+                <!-- <th>Employee Work</th>    -->
+            </tr>
+    
+            {% for i in data %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                {% comment %} <td>{{ i.id }}</td> {% endcomment %}
+                <td>{{ i.employe_name }}</td>
+                <td>{{ i.employe_email }}</td>
+                <td>{{ i.contact_number }}</td>
+                <td>{{ i.department }}</td>
+                <td>{{ i.date_of_joining }}</td>
+                <td>{{ i.employe_password }}</td>
+            <td><button><a href="{% url 'edituser' pk=i.id %}" style="color: blue;">Edit</a></button></td>
+            <td><button><a href="{% url 'remove' pk=i.id %}" style="color: red;">Delete</a></button></td>
+
+
+            
+            </tr>
+            {% endfor %}
+    
+    </table>
+</div>
+{% endblock %}

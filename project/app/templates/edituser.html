@@ -1,0 +1,64 @@
+{% extends "base1.html" %}
+{% load static %}
+
+{% block title %}
+    {{ data.name }}'s Profile
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+ {% block Content %} 
+    
+   
+<div class="table-container">
+    <h1 style="color: black; text-align: center;">Employee Records</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Contact</th>
+                <th>Department</th>
+                <th>Your Task</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in data2 %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.employe_name }}</td>
+                <td>{{ i.employe_email }}</td>
+                <td>{{ i.contact_number }}</td>
+                <td>{{ i.department }}</td>
+                <td>{{ i.your_work }}</td>
+                <td>
+                    <a href="{% url 'update' pk=i.id %}">
+                        <i class="bi bi-pencil-square edit-icon"></i>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% if data4 %}
+<div class="update-form">
+    <h3>Update Employee Details</h3>
+    <form action="{% url 'updatedata' pk=data4.id %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="name" value="{{data4.employe_name}}" placeholder="Enter Name">
+        <input type="email" name="email" value="{{data4.employe_email}}" placeholder="Enter Email">
+        <input type="text" name="department" value="{{data4.department}}" placeholder="Enter Department">
+        <input type="number" name="contact" value="{{data4.contact_number}}" placeholder="Enter Contact Number">
+        <input type="text" name="work" value="{{data4.your_work}}" placeholder="Enter Work">
+        <button type="submit">Update</button>
+    </form>
+</div>
+{% endif %}
+
+ {% endblock %} 

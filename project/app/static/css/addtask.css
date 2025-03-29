@@ -1,0 +1,43 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    /* padding: 20px; */
+    padding: 0;
+}
+
+/* Table Styles */
+.table-container {
+    width: 900;
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+table {
+    width: auto;
+    background: #2b2150;
+    box-shadow: 0 4px 10px rgba(252, 246, 246, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px;
+}
+
+thead {
+    background: #2b2150;  /* Deep Purple */
+    color: white;
+    font-weight: bold;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid;
+    color: white;
+}
+#addtask-btn{
+    height: 30px;
+    width: 70px;
+}
+#addtask-btn a{
+    text-decoration: none;
+}
