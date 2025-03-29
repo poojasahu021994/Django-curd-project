@@ -20,7 +20,7 @@
                 <li><a href="{% url 'Registration'%}"><i class="bi bi-person-circle"></i>Add Employees</a></li>
                 <li><a href="{% url 'addtask' %}"><i class="bi bi-list-task"></i>Add Task</a></li>
                 <li><a href="{% url 'showtask' %}"><i class="bi bi-list-task"></i>Show Task</a></li>
-                {% comment %} <li><a href="{% url 'edituser' %}">Edit User Details</a></li> {% endcomment %}
+                <li><a href="{% url 'edituser' pk=data.user_id %}"><i class="bi bi-pencil-square"></i>Edit User Details</a></li>
 
             </ul>
         </div>

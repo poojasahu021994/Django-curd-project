@@ -163,9 +163,25 @@ def remove(request,pk):
     return render(request,'admindashboard.html',{'data':stu.values})
 
 # ------edit function------
-def edituser(request):
+def edituser(request,pk):
+     user2=EmployeeData.objects.get(id=pk)
      myans1=EmployeeData.objects.all()
-     return render(request,'edituser.html',{'data2':myans1.values})
+     if user:  
+         user= {
+            'name': user2.employe_name,
+            'email': user2.employe_email,
+            'department': user2.department,
+            'contact': user2.contact_number,
+            'work': user2.your_work,
+            'user_id': user2.id   # Ensure user.id exists
+        }
+     return render(request,'edituser.html',{'data2':myans1.values ,'data': user})
+
+def update(request,pk):
+    x=EmployeeData.objects.get(id=pk)
+    emp=EmployeeData.objects.all()
+    
+    return render(request,'edituser.html',{'data2':emp,'data4':x})
 
 # -----update user details-----
 def updatedata(request,pk):
