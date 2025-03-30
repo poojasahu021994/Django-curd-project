@@ -4,15 +4,14 @@ body {
     color: white;
     margin: 0;
     padding: 0;
-    width: 50%;
+    
 }
 
 /* Table Container */
 .table-container {
     width: 100%; /* Change to 100% for responsiveness */
     max-width: 900px; /* Set a max-width to maintain layout */
-
-    margin: 40px auto;
+    margin: 40px;
     background: #fff;
     padding: 20px;
     border-radius: 10px;
@@ -21,9 +20,8 @@ body {
 }
 
 /* Table */
-table {
+#table-data {
     width: 100%; /* Change to 100% for responsiveness */
-
     border-collapse: collapse;
     background: #fff;
     overflow: hidden;
@@ -31,27 +29,33 @@ table {
     margin: auto;
 }
 
-thead {
+#table-data thead {
     background: #112d4e;
     color: white;
     font-size: 1.1rem;
 }
 
-th, td {
+#table-heading th, td {
     padding: 14px 18px;
     text-align: center;
     border-bottom: 2px solid #ddd;
-    color: #112d4e;
+    color: #ddd;
 }
 
+tbody{
+    color: #3f72af;
+    background-color: #3f72af;
+}
 /* Alternate Row Colors */
-tbody tr:nth-child(odd) {
+/* tbody tr:nth-child(odd) {
     background: #e3e3e3;
+    color: #3f72af;
 }
 
 tbody tr:nth-child(even) {
     background: #f9f9f9;
-}
+    color: #3f72af;
+} */
 
 /* Hover Effect */
 tbody tr:hover {

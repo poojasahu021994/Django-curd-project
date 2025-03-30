@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="">
     <title>{% block title %} defult {% endblock %}</title>
     <!-- {% block head %} {% endblock %} -->
     {% block css %} {% endblock %}
@@ -20,7 +21,7 @@
                 <li><a href="{% url 'Registration'%}"><i class="bi bi-person-circle"></i>Add Employees</a></li>
                 <li><a href="{% url 'addtask' %}"><i class="bi bi-list-task"></i>Add Task</a></li>
                 <li><a href="{% url 'showtask' %}"><i class="bi bi-list-task"></i>Show Task</a></li>
-                <li><a href="{% url 'edituser' pk=data.user_id %}"><i class="bi bi-pencil-square"></i>Edit User Details</a></li>
+                {% comment %} <li><a href="{% url 'edituser' %}"><i class="bi bi-pencil-square"></i>Edit User Details</a></li> {% endcomment %}
 
             </ul>
         </div>

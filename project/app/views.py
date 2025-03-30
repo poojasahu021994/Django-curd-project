@@ -164,9 +164,11 @@ def remove(request,pk):
 
 # ------edit function------
 def edituser(request,pk):
+     print(pk)
      user2=EmployeeData.objects.get(id=pk)
+     print(user2)
      myans1=EmployeeData.objects.all()
-     if user:  
+     if user2:  
          user= {
             'name': user2.employe_name,
             'email': user2.employe_email,
@@ -175,12 +177,11 @@ def edituser(request,pk):
             'work': user2.your_work,
             'user_id': user2.id   # Ensure user.id exists
         }
-     return render(request,'edituser.html',{'data2':myans1.values ,'data': user})
+     return render(request,'edituser.html', {'data2':myans1, 'data': user})
 
 def update(request,pk):
     x=EmployeeData.objects.get(id=pk)
-    emp=EmployeeData.objects.all()
-    
+    emp=EmployeeData.objects.all() 
     return render(request,'edituser.html',{'data2':emp,'data4':x})
 
 # -----update user details-----
@@ -204,7 +205,7 @@ def updatedata(request,pk):
           x.your_work=work
           x.save()
           stu1=EmployeeData.objects.all()
-          return render(request,'edituser.html',{'data2':stu1})
+          return render(request,'edituser.html',{'data2':stu1,'data4':x})
 
 # showtask function
 def Showtask(request):

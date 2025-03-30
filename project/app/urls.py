@@ -14,8 +14,9 @@ urlpatterns=[
     path('logout/',views.Logout,name='logout'),
     path('showtask/',views.Showtask, name='showtask'),
     path('usertask/<int:pk>/',views.usertask, name='usertask'),
-    path('edituser/',views.edituser, name='edituser'),
+    path('edituser/<int:pk>/',views.edituser, name='edituser'),
     path('updatedata/<int:pk>/',views.updatedata,name='updatedata'),
+    path('update/<int:pk>/',views.update,name='update'),
 
 
 

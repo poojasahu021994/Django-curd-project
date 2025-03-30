@@ -14,9 +14,9 @@
    
 <div class="table-container">
     <h1 style="color: black; text-align: center;">Employee Records</h1>
-    <table>
+    <table id="table-data">
         <thead>
-            <tr>
+            <tr id="table-heading">
                 <th>S.No</th>
                 <th>Name</th>
                 <th>Email</th>
@@ -36,9 +36,8 @@
                 <td>{{ i.department }}</td>
                 <td>{{ i.your_work }}</td>
                 <td>
-                    <a href="{% url 'update' pk=i.id %}">
-                        <i class="bi bi-pencil-square edit-icon"></i>
-                    </a>
+                    <a href="{% url 'update' pk=i.id %}"><i class="fa-solid fa-pen-to-square"></i>
+                        {% comment %} <i class="bi bi-pencil-square edit-icon"></i> {% endcomment %}edit</a>
                 </td>
             </tr>
             {% endfor %}
