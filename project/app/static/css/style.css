@@ -36,6 +36,10 @@
 .Navbar li{
     list-style: none;
 }
+#Portal-name a{
+    color:#f35b1f ;
+    text-decoration: none;
+}
 .Navbar #navbar-heading{
     font-size: 30px;
     font-weight: 600;

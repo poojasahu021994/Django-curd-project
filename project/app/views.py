@@ -91,13 +91,6 @@ def adminlogin(request):
             mypass=user.admin_password
         
             if(mypass==password):
-                # admin_data=Admindatabase.objects.get()
-                # all_data={
-                #         'name':admin_data.admin_name,
-                #         'email': admin_data.admin_email,
-                #         'pass': admin_data.admin_password,
-                #         # 'contact': admin_data.admin_number,
-                #         }
                 return render(request,'admindashboard.html', {'admin_email':adminemail, 'admin_pass':adminpass, 'admin_name': adminName})
 
 def admindashboard(request):
@@ -191,15 +184,12 @@ def updatedata(request,pk):
           x =EmployeeData.objects.get(id=pk)
           name = request.POST.get('name')
           email = request.POST.get('email')
-       
           contact = request.POST.get('contact')
           dep = request.POST.get('department')
           work = request.POST.get('work') 
          
-
           x.employe_name=name
-          x.employe_email=email
-        
+          x.employe_email=email        
           x.contact_number=contact
           x.department=dep
           x.your_work=work
