@@ -1,9 +1,15 @@
 #table-data tr td{
-
 color: white;
 }
 
 #table-data tr th{
-
-    color: white;
-    }
+color: white;  
+}
+.fa-solid{
+    color: rgb(63, 63, 211);
+    font-size: 20px;  
+}
+.fa-trash{
+    color: brown;
+    padding: 5px;
+}

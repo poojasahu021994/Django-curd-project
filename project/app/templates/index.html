@@ -14,7 +14,7 @@
        <nav class="Navbar">
         <ul class="nav-topic">
           <li>
-          <a href="{% url 'index'%}"><img class="navbar-ogo" src="../static/Images/images-log-01.jpg" alt=""></a>
+          <a href="{% url 'index'%}"><img class="navbar-logo" src="../static/Images/images-log-01.jpg" alt=""></a>
         </li>
         <li id="Portal-name"><a href="{% url 'index'%}">Home</a></li>
         <li id="Portal-name"><a href="">Electronics Projects</a></li>
@@ -22,9 +22,9 @@
         <li id="Portal-name"><a href="">Software Projects</a></li>
       </ul>
        <ul class="nav-icon"> 
-  <li id="login-icon"><a class="dropdown-item" href="{% url 'login'%}"><i class="fa-solid fa-user"></i></a></li>
-  <li ><i class="fa-solid fa-circle-user"></i></li>
-  <li><i class="fa-solid fa-magnifying-glass"></i></li>
+  <li id="login-icon"><a href="{% url 'login'%}"><i class="fa-solid fa-user"></i></a></li>
+  <li id="login-icon"><a href=""><i class="fa-solid fa-location-dot"></i></a></li>
+  <li id="login-icon"><a href=""><i class="fa-solid fa-magnifying-glass"></i></a></li>
   <div id="mobile-bar">
     <label for="input1"><i class="fa-solid fa-bars"></i></label>
   </div>
@@ -34,7 +34,7 @@
 <!--mobile navbar  -->
 <nav id="shownav">
   <ul>
-    <li><a href="#">Home</a></li>
+    <li><a href="{% url 'index'%}">Home</a></li>
     <li><a href="#">Electronics Projects</a></li>
     <li><a href="#">Mechanical Projects</a></li>
     <li><a href="#">Software Projects</a></li>
@@ -89,11 +89,11 @@
       </ul>
       <ul class="menu_footer">
         <li>
-          <a href="#Home">ME</a>
-          <a href="#Menu">ET</a>
-          <a href="#chaf">CSE</a>
-          <a href="#About">EC</a>
-          <a href="#Contact">Contact</a>
+          <a href="#">ME</a>
+          <a href="#">ET</a>
+          <a href="#">CSE</a>
+          <a href="#">EC</a>
+          <a href="#">Contact</a>
           <p>Created <i class="fa-solid fa-heart"></i>with by @poojasahu</p>
         </li>
       </ul>

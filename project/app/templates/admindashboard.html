@@ -34,8 +34,8 @@
                 <td>{{ i.department }}</td>
                 <td>{{ i.date_of_joining }}</td>
                 <td>{{ i.employe_password }}</td>
-            <td><button><a href="{% url 'edituser' pk=i.id %}" style="color: blue;">Edit</a></button></td>
-            <td><button><a href="{% url 'remove' pk=i.id %}" style="color: red;">Delete</a></button></td>
+            <td><button><a href="{% url 'edituser' pk=i.id %}"><i class="fa-solid fa-pen-to-square"></i></a></button></td>
+            <td><button><a href="{% url 'remove' pk=i.id %}"><i class="fa-solid fa-trash"></i></a></button></td>
 
 
             
