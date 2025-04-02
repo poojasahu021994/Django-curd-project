@@ -16,10 +16,5 @@ urlpatterns=[
     path ('usertask/<int:pk>/',views.usertask, name='usertask'),
     path ('edituser/<int:pk>/',views.edituser, name='edituser'),
     path ('updatedata/<int:pk>/',views.updatedata,name='updatedata'),
-    path 
-    ('update/<int:pk>/',views.update,name='update'),
-
-
-
-
+    path ('update/<int:pk>/',views.update,name='update'),
 ]
